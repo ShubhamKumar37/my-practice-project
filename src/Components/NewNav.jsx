@@ -1,4 +1,4 @@
-
+import {Link} from 'react-router-dom';
 export default function NewNav(Props) {
     
     return (
@@ -23,10 +23,8 @@ export default function NewNav(Props) {
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
-                                <a href="#" className="bg-gray-600 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
-                                <a href="#" className="  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
-                                <a href="#" className="  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Projects</a>
-                                <a href="#" className="  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
+                                <a href="/" className="bg-gray-600 text-white rounded-md px-3 py-2 text-sm font-medium" aria-current="page">Dashboard</a>
+                                <a href="/" className="  hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Team</a>
                             </div>
                         </div>
                     </div>

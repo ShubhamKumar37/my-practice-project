@@ -2,20 +2,27 @@ import logo from './logo.svg';
 import './App.css';
 import NewNav from './Components/NewNav';
 import TextArea from './Components/TextArea';
-  import Alert from './Components/Alert';
+import Alert from './Components/Alert';
+import NewsComp from './Components/NewsComp';
 import React, { useState } from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Link,
+  BrowserRouter
+} from "react-router-dom";
 
 function App() {
   const [DarkMode, StateDarkMode] = useState('gray-200 text-black');
   const [DarkWhiteText, StateDarkWhiteText] = useState('Enable Dark Mode');
-  const [AlertMessage, SetAlertMessage] = useState('', 100); 
+  const [AlertMessage, SetAlertMessage] = useState('', 100);
 
-  const Set_Alert = (Message, Type) =>
-  {
+  const Set_Alert = (Message, Type) => {
     SetAlertMessage(
       {
-        MSG : Message,
-        TYP : Type
+        MSG: Message,
+        TYP: Type
       }
     )
     setTimeout(() => {
@@ -38,12 +45,10 @@ function App() {
   }
 
   const ChangeText = () => {
-    if(DarkWhiteText === 'Enable Dark Mode')
-    {
+    if (DarkWhiteText === 'Enable Dark Mode') {
       StateDarkWhiteText('Enable Light Mode');
     }
-    else
-    {
+    else {
       StateDarkWhiteText('Enable Dark Mode');
     }
   }
@@ -52,7 +57,14 @@ function App() {
     <div>
       <NewNav Mode={DarkMode} ToggleMode={ToggleDisplay} Text={DarkWhiteText} className='relative' Message={AlertMessage}></NewNav>
       <Alert Message={AlertMessage}></Alert>
-      <TextArea Mode={DarkMode} Set_Alert={Set_Alert}></TextArea>
+      <BrowserRouter>
+        <Routes>
+          <Route path='./Components/NewsComp' element={<NewsComp/>}></Route>
+          <Route path='./Components/TextArea' element={<TextArea/>}></Route>
+          
+        </Routes>
+      </BrowserRouter>
+      {/* <NewsComp></NewsComp> */}
     </div>
   );
 }
