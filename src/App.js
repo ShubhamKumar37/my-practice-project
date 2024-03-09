@@ -27,12 +27,12 @@ function App() {
     if (DarkMode === 'gray-200 text-black') {
       StateDarkMode('black text-white');
       document.body.style.backgroundColor = '#18101F';
-      Set_Alert('Now you are in light mode', 'Success');
+      Set_Alert('Now you are in dark mode', 'Success');
     }
     else {
       document.body.style.backgroundColor = '#E6CAFF';
       StateDarkMode('gray-200 text-black');
-      Set_Alert('Now you are in dark mode', 'Success');
+      Set_Alert('Now you are in light mode', 'Success');
     }
     ChangeText();
   }
