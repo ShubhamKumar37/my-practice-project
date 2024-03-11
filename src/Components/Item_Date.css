@@ -1,0 +1,8 @@
+.New_Date
+{
+    background-color: green;
+    font-size: 3rem;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
